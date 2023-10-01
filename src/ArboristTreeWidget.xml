@@ -7,11 +7,72 @@
     <description>Arborist tree widget</description>
     <icon/>
     <properties>
-        <propertyGroup caption="General">
+        <!-- <propertyGroup caption="General">
             <property key="sampleText" type="string" required="false">
                 <caption>Default value</caption>
                 <description>Sample text input</description>
             </property>
+        </propertyGroup> -->
+
+    
+        <!-- Service call properties -->
+
+        <propertyGroup caption="Service call">
+            <property key="dataChangeDateAttr" type="attribute">
+                <caption>Data change date</caption>
+                <description>Update the date in your logic to make the widget call the web service. (Pluggable widgets are rendered VERY often!)</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+            <property key="serviceUrl" type="expression">
+                <caption>URL for the service</caption>
+                <description>Only calls to the app backend are supported. So it must be in the format /rest/*yourServiceName*</description>
+                <returnType type="String" />
+            </property>
+            <property key="serviceParmAttr" type="attribute" required="false">
+                <caption>Service parm value</caption>
+                <description>If set, will be passed as the value for query parameter context in the URL</description>
+                <attributeTypes>
+                    <attributeType name="AutoNumber"/>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Long"/>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="serviceParmList" type="object" isList="true" required="false">
+                <caption>Query parameters</caption>
+                <description>Additional query parameters to add to the service URL.</description>
+                <properties>
+                    <propertyGroup caption="Query parameters">
+                        <property key="parameterName" type="expression">
+                            <caption>Name</caption>
+                            <description>Be sure the value does not contain spaces.</description>
+                            <returnType type="String" />
+                        </property>
+                        <property key="parameterValue" type="expression">
+                            <caption>Value</caption>
+                            <description>Be sure the value does not contain spaces.</description>
+                            <returnType type="String" />
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+
         </propertyGroup>
+
+        <!-- Advanced properties -->
+
+        <propertyGroup caption="Advanced">
+            <property key="logToConsole" type="boolean" defaultValue="false">
+                <caption>Console logging</caption>
+                <description>Log widget progress to the console. Useful to get timing on data retrieval etc.</description>
+            </property>
+            <property key="dumpServiceResponseInConsole" type="boolean" defaultValue="false">
+                <caption>Dump service response</caption>
+                <description>Dump the response of the service call to the console</description>
+            </property>
+        </propertyGroup>
+
     </properties>
 </widget>

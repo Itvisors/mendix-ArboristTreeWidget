@@ -20,11 +20,23 @@ public class Microflows
 	public Microflows() {}
 
 	// These are the microflows for the TestArboristTreeWidget module
+	public static void aCT_TestContainer_OpenTreePage(IContext context, testarboristtreewidget.proxies.TestContainer _testContainer)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("TestContainer", _testContainer == null ? null : _testContainer.getMendixObject());
+		Core.microflowCall("TestArboristTreeWidget.ACT_TestContainer_OpenTreePage").withParams(params).execute(context);
+	}
 	public static boolean aCT_TestContainer_SaveNew(IContext context, testarboristtreewidget.proxies.TestContainer _testContainer)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("TestContainer", _testContainer == null ? null : _testContainer.getMendixObject());
 		return (java.lang.Boolean) Core.microflowCall("TestArboristTreeWidget.ACT_TestContainer_SaveNew").withParams(params).execute(context);
+	}
+	public static void sUB_TestContainer_OpenTreePage(IContext context, testarboristtreewidget.proxies.TestContainer _testContainer)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("TestContainer", _testContainer == null ? null : _testContainer.getMendixObject());
+		Core.microflowCall("TestArboristTreeWidget.SUB_TestContainer_OpenTreePage").withParams(params).execute(context);
 	}
 	public static boolean vAL_TestContainer(IContext context, testarboristtreewidget.proxies.TestContainer _testContainer)
 	{
