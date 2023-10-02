@@ -30,34 +30,6 @@
                 <description>Only calls to the app backend are supported. So it must be in the format /rest/*yourServiceName*</description>
                 <returnType type="String" />
             </property>
-            <property key="serviceParmAttr" type="attribute" required="false">
-                <caption>Service parm value</caption>
-                <description>If set, will be passed as the value for query parameter context in the URL</description>
-                <attributeTypes>
-                    <attributeType name="AutoNumber"/>
-                    <attributeType name="Integer"/>
-                    <attributeType name="Long"/>
-                    <attributeType name="String"/>
-                </attributeTypes>
-            </property>
-            <property key="serviceParmList" type="object" isList="true" required="false">
-                <caption>Query parameters</caption>
-                <description>Additional query parameters to add to the service URL.</description>
-                <properties>
-                    <propertyGroup caption="Query parameters">
-                        <property key="parameterName" type="expression">
-                            <caption>Name</caption>
-                            <description>Be sure the value does not contain spaces.</description>
-                            <returnType type="String" />
-                        </property>
-                        <property key="parameterValue" type="expression">
-                            <caption>Value</caption>
-                            <description>Be sure the value does not contain spaces.</description>
-                            <returnType type="String" />
-                        </property>
-                    </propertyGroup>
-                </properties>
-            </property>
 
         </propertyGroup>
 
