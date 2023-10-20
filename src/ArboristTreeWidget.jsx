@@ -1,12 +1,14 @@
+import { createElement, useState } from "react";
 import { ArboristTree } from "./components/ArboristTree";
-import { createElement } from "react";
 
 // eslint-disable-next-line sort-imports
 import "./ui/ArboristTreeWidget.css";
 
 export function ArboristTreeWidget(props) {
-    if (props) {
-        console.log("dummy");
+    const [dataChangedDate, setDataChangedDate] = useState(null);
+
+    if (props.logToConsole) {
+        logMessageToConsole("onClickExportButton: No table data");
     }
     const data = [
         { id: "1", name: "Unread" },
@@ -32,4 +34,8 @@ export function ArboristTreeWidget(props) {
     ];
 
     return <ArboristTree data={data} />;
+
+    function logMessageToConsole(message) {
+        console.info(this.props.name + " " + new Date().toISOString() + " (widget) " + message);
+    }
 }
